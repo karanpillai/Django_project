@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
     {% for post in posts %}
-        <h2>{{ post.title }}</h2>
-        <p>Posted By {{post.author}} on {{ post.date }}</p>
-        <p>{{ post.description }}</p>
+        <article class="media content-section">
+            <div class="media-body">
+            <div class="article-metadata">
+                Author :<a class="mr-2 " href="#" style="text-transform: capitalize;"> {{ post.author }}</a>
+                <small class="text-muted">Posted on : {{ post.datetime|date:"F d,Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="#" style="text-transform: capitalize;">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+            </div>
+        </article>
     {% endfor %}
 {% endblock %}

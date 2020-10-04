@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse
-
+from .models import Post
 posts = [
     {
         'author':'Karan',
@@ -17,9 +17,11 @@ posts = [
 # Create your views here.
 def home(request):
     context = {
-        'posts' : posts
+        'posts' : Post.objects.all()
     }
     return render(request,'home.html',context)
 
 def about(request):
     return render(request,'about.html',{"title":"About"})
+
+    
