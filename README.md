@@ -1,2 +1,2 @@
 # Django_project
-Django blog
+Static Data had been passed in templates.
