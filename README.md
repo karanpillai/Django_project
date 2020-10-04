@@ -1,2 +1,2 @@
 # Django_project
-Django blog
+Database had been added
