@@ -9,7 +9,7 @@ class Post(models.Model):
     datetime = models.DateTimeField(default=timezone.now)    #add_now = post updat karne par current date daalega and auto_now_add = shuru ka date fix hoga
     author = models.ForeignKey(User,on_delete=models.CASCADE)   #on_delete matlab user delete ho gaya toh post bhi delete ho jayga
 
-    def __str__(self):
+    def __str__(self):         # special method so that object is not written,title is written
         return self.title
 """
 Shell commands
@@ -17,10 +17,13 @@ User.objects.all()
 User.objects.first()/ User.objects.last()
 User.objects.filter(username = 'karan')
 user = User.objects.filter(username = 'karan')
-user.id / user1.pk
+user.id / user.pk
 User.objects.get(id = 1)
 
 post1 = Post(title='',content='',author = user)
 post1.save()
 
+post1 = Post.objects.get(id= 1)
+post1.author      -> karan
+post1.author_id   -> 1
 """

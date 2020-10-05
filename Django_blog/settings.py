@@ -32,6 +32,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
+    'users.apps.UsersConfig',
+    'crispy_forms',    #crispy forms is a django form class to make forms better. to install-> pip install django-crispy-forms
+    # also register below the crispy form -> CRISPY_TEMPLATE_PACK = 'uni_form'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,3 +125,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
