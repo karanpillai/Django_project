@@ -1,0 +1,12 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    <h3 class="text-center" style="text-decoration: underline;"> You have been Logout</h3>
+    <div class="content-section">
+        <div class="form-group border-top pt-3">
+            <small class="text-muted">
+                 <a href="{% url 'login' %}" class="ml-2">Login again</a>
+            </small>
+        </div>
+    </div>
+{% endblock %}

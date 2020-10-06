@@ -126,3 +126,4 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_REDIRECT_URL = 'blog-home' #login click krne pai konse page par redirect karna hai
