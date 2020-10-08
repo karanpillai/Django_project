@@ -1,0 +1,15 @@
+{% extends "../base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img mt-3" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+          <p class="account-heading lead" style="text-transform: capitalize;">Name : {{ user.username }}</p>
+          <p class="text-secondary">Email : {{ user.email }}</p>
+          <p class="text-secondary">State : {{user.profile.state}} </p>
+        </div>
+      </div>
+      <!-- FORM HERE -->
+    </div>
+{% endblock content %}

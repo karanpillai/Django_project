@@ -125,5 +125,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+
+#media root tera base dir mai media folders ke andar profile pics folder ke andar dalega
+MEDIA_ROOT= BASE_DIR / "media"  #models images ko profile_pics mai upload kata tha but aise bhar jayga 
+MEDIA_URL= '/media/'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'blog-home' #login click krne pai konse page par redirect karna hai
+LOGIN_URL = 'login' #decorators functionality

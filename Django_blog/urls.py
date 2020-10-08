@@ -15,12 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from django.contrib.auth import views as auth_views #Django built in login form
+from django.contrib.auth import views as auth_views #Django built in login,logout form
+from users import views as profile_views
+
+# Profile related import ...to display the image in profile.
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('blog.urls')),
     path('register/',include('users.urls')),
+    path('profile/',profile_views.profile,name='user-profile'),
     path('login/',auth_views.LoginView.as_view(template_name='users/login.html' ),name='login'),
     path('logout/',auth_views.LogoutView.as_view(template_name='users/logout.html'),name='logout')
 ]
+
+#Media image display karne ke liye
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
